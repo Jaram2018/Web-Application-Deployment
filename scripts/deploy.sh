@@ -25,7 +25,7 @@ if [ -z $CURRENT_PID ]; then
 	echo "> There is no operating app."
 else
 	echo "> kill -15 $CURRENT_PID"
-	kill -2 $CURRENT_PID
+	kill -15 $CURRENT_PID
 	sleep 5
 fi
 
