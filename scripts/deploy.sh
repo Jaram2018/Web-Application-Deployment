@@ -29,8 +29,8 @@ else
 	sleep 5
 fi
 
-echo "> JAR name : $JAR_NAME"
 JAR_NAME=$(ls $APP_FOLDER/ |grep 'web-application-deployment' | tail -n 1)
+echo "> JAR name : $JAR_NAME"
 
 echo "> Deploy new application"
 nohup java -jar $APP_FOLDER/$JAR_NAME &
