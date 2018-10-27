@@ -10,7 +10,7 @@ echo "> Git Pull"
 git pull
 
 echo "> Start project build"
-./gradlew build
+$REPOSITORY/gradlew build
 
 echo "> Copy build file"
 cp ./build/libs/*.jar $APP_FOLDER/
