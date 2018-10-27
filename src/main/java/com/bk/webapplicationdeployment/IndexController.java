@@ -17,7 +17,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String version(Model model) {
-        model.addAttribute("version", "0.0.10");
+        model.addAttribute("version", "0.1.0");
         return "index";
     }
 }
