@@ -24,9 +24,9 @@ echo "$CURRENT_PID"
 if [ -z $CURRENT_PID ]; then
 	echo "> There is no operating app."
 else
-	echo "> kill -2 $CURRENT_PID"
+	echo "> kill -15 $CURRENT_PID"
 	kill -2 $CURRENT_PID
-	sleep 10
+	sleep 5
 fi
 
 JAR_NAME=$(ls $APP_FOLDER/ |grep 'web-application-deployment' | tail -n 1)
