@@ -26,7 +26,7 @@ if [ -z $CURRENT_PID ]; then
 else
 	echo "> kill -2 $CURRENT_PID"
 	kill -2 $CURRENT_PID
-	sleep 5
+	sleep 10
 fi
 
 JAR_NAME=$(ls $APP_FOLDER/ |grep 'web-application-deployment' | tail -n 1)
