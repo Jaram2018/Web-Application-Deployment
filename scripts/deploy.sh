@@ -1,4 +1,6 @@
-﻿APP_FOLDER=/home/ec2-user/app
+﻿#!/bin/bash
+
+APP_FOLDER=/home/ec2-user/app
 REPOSITORY=$APP_FOLDER/git
 echo "APP_FOLDER : $APP_FOLDER"
 echo "REPOSITORY : $REPOSITORY"
@@ -10,7 +12,7 @@ echo "> Git Pull"
 git pull
 
 echo "> Start project build"
-$REPOSITORY/Web-Application-Deployment/gradlew build
+./gradlew build
 
 echo "> Copy build file"
 cp ./build/libs/*.jar $APP_FOLDER/
