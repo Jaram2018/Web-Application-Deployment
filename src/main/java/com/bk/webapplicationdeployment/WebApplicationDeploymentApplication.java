@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebApplicationDeploymentApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplicationDeploymentApplication.class, args);
+        // SpringApplication.run(WebApplicationDeploymentApplication.class, args);
+        SpringApplication app = new SpringApplication(WebApplicationDeploymentApplication.class);
+
+        app.run(args);
     }
 }
