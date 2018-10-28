@@ -9,7 +9,6 @@ echo "REPOSITORY : $REPOSITORY"
 
 cd /home/ec2-user/Web-Application-Deployment/
 
-#!/bin/bash
 echo "> Git Pull"
 git pull
 
