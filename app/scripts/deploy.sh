@@ -1,6 +1,6 @@
 ﻿#!/bin/bash
 
-GIT_FOLDER=/home/ec2-user/Web-Application-Deployment/
+GIT_FOLDER=/home/ec2-user/Web-Application-Deployment
 APP_FOLDER=${GIT_FOLDER}/app
 REPOSITORY=${APP_FOLDER}/web-application-deployment
 JAR_PATH=${APP_FOLDER}/jar
