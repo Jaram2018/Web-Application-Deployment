@@ -1,21 +1,25 @@
 ﻿#!/bin/bash
 
-APP_FOLDER=/home/ec2-user/app
-REPOSITORY=$APP_FOLDER/git
+GIT_FOLDER=/home/ec2-user/Web-Application-Deployment/
+APP_FOLDER=$GIT_FOLDER/app
+REPOSITORY=$APP_FOLDER/web-application-deployment
+
 echo "APP_FOLDER : $APP_FOLDER"
 echo "REPOSITORY : $REPOSITORY"
 
-cd $REPOSITORY/Web-Application-Deployment
+cd /home/ec2-user/Web-Application-Deployment/
 
 #!/bin/bash
 echo "> Git Pull"
 git pull
 
+cd $REPOSITORY
+
 echo "> Start project build"
 ./gradlew build
 
 echo "> Copy build file"
-cp ./build/libs/*.jar $APP_FOLDER/
+cp ./build/libs/*.jar $GIT_FOLDER/
 
 echo "> Check 'pid' of the current operating application"
 CURRENT_PID=$(pgrep -f web-application-deployment)
@@ -29,8 +33,8 @@ else
 	sleep 5
 fi
 
-JAR_NAME=$(ls $APP_FOLDER/ |grep 'web-application-deployment' | tail -n 1)
+JAR_NAME=$(ls $GIT_FOLDER/ |grep 'web-application-deployment' | tail -n 1)
 echo "> JAR name : $JAR_NAME"
 
 echo "> Deploy new application"
-nohup java -jar $APP_FOLDER/$JAR_NAME &
+nohup java -jar $GIT_FOLDER/$JAR_NAME &
