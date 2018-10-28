@@ -63,7 +63,7 @@ do
     response=$(curl -s http://localhost:${IDLE_PORT}/actuator/health)
     up_count=$(echo ${response} | grep 'UP' | wc -l)
 
-    if [ ${up_count} -ge 1 ]
+    if [ $up_count -ge 1 ]
     then
         echo "> Success 'Health Check'"
         break
@@ -72,7 +72,7 @@ do
         echo "> Health check: ${response}"
     fi
 
-    if [ ${count} -eq 10 ]
+    if [ $count -eq 10 ]
     then
         echo "> Failed 'Health check'"
         echo "> Exit the deployment without connecting 'Nginx'"
@@ -82,3 +82,7 @@ do
     echo "> Failed 'Health Check' - Reconnecting ..."
     sleep 10
 done
+
+echo "> Switching !!"
+sleep 10
+./switch.sh
