@@ -36,8 +36,5 @@ fi
 JAR_NAME=$(ls ${JAR_PATH}/ |grep 'web-application-deployment' | tail -n 1)
 echo "> JAR name : $JAR_NAME"
 
-echo "> Start nonstop process ... "
-./nonstop_deploy.sh
-
-# echo "> Deploy new application"
-# nohup java -jar ${JAR_PATH}/${JAR_NAME} &
+echo "> Deploy new application"
+nohup java -jar ${JAR_PATH}/${JAR_NAME} &

@@ -51,38 +51,34 @@ else
     sleep 5
 fi
 
-echo "> Deploy the ${IDLE_PROFILE}"
+echo "> Deploy the ${IDLE_PROFILE} ..."
 nohup java -jar -Dspring.profiles.active=${IDLE_PROFILE} ${IDLE_APPLICATION_PATH} &
 
-echo "> Starting 'Health Check' after 10s on ${IDLE_PROFILE}"
-echo "> curl -s http://localhost:${IDLE_PORT}/actuator/health"
+#echo "> Starting 'Health Check' after 10s on ${IDLE_PROFILE}"
+#echo "> curl -s http://localhost:${IDLE_PORT}/actuator/health"
 sleep 10
 
-for count in {1...10}
-do
-    response=$(curl -s http://localhost:${IDLE_PORT}/actuator/health)
-    up_count=$(echo ${response} | grep 'UP' | wc -l)
-
-    if [ $up_count -ge 1 ]
-    then
-        echo "> Success 'Health Check'"
-        break
-    else
-        echo "> Unknown the response of 'Health Check' or there isn't 'UP' state"
-        echo "> Health check: ${response}"
-    fi
-
-    if [ $count -eq 10 ]
-    then
-        echo "> Failed 'Health check'"
-        echo "> Exit the deployment without connecting 'Nginx'"
-        exit 1
-    fi
-
-    echo "> Failed 'Health Check' - Reconnecting ..."
-    sleep 10
-done
-
-echo "> Switching !!"
-sleep 10
-./switch.sh
+#for count in {1...10}
+#do
+#    response=$(curl -s http://localhost:${IDLE_PORT}/actuator/health)
+#    up_count=$(echo ${response} | grep 'UP' | wc -l)
+#
+#    if [ ${up_count} -ge 1 ]
+#    then
+#        echo "> Success 'Health Check'"
+#        break
+#    else
+#        echo "> Unknown the response of 'Health Check' or there isn't 'UP' state"
+#        echo "> Health check: ${response}"
+#    fi
+#
+#    if [ ${count} -eq 10 ]
+#    then
+#        echo "> Failed 'Health check'"
+#        echo "> Exit the deployment without connecting 'Nginx'"
+#        exit 1
+#    fi
+#
+#    echo "> Failed 'Health Check' - Reconnecting ..."
+#    sleep 10
+#done
