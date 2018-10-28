@@ -34,7 +34,7 @@ else
 fi
 
 echo "> Exchange 'application.jar'"
-IDLE_APPLICATION=${IDLE_PROFILE}-web-application
+IDLE_APPLICATION=${IDLE_PROFILE}-web-application-deployment
 IDLE_APPLICATION_PATH=${DEPLOY_PATH}${IDLE_APPLICATION}
 
 ln -Tfs ${DEPLOY_PATH}${JAR_NAME} ${IDLE_APPLICATION_PATH}  # 앞에 profile 접두어 붙이고 신규 jar 심볼릭 링크
