@@ -8,7 +8,7 @@ public class WebApplicationDeploymentApplication {
 
     public static final String APPLICATION_LOCATIONS = "spring.config.location="
             + "classpath:application.yml, "
-            + "/Web-Application-Deployment/app/config/external-config.yml";
+            + "/home/ec2-user/Web-Application-Deployment/app/config/external-config.yml";
 
     public static void main(String[] args) {
         // SpringApplication.run(WebApplicationDeploymentApplication.class, args);
