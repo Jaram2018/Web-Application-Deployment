@@ -69,6 +69,12 @@ do
         break
     else
         echo "> Unknown the response of 'Health Check' or there isn't 'UP' state"
+        echo "> Health check: ${response}"
+    fi
+
+    if [ ${count} -eq 10 ]
+    then
+        echo "> Failed 'Health check'"
         echo "> Exit the deployment without connecting 'Nginx'"
         exit 1
     fi
