@@ -8,8 +8,8 @@ CONFIG_PATH=${APP_PATH}/config
 SOURCE_PATH=${APP_PATH}/web-application-deployment
 BUILD_PATH=$(ls ${SOURCE_PATH}/build/libs/*.jar)
 
-JAR_NAME=$(basename ${BUILD_PATH})  # basename 으로 파일 명 추출
-echo "> The name of file in build : ${JAR_NAME}"
+echo "> The name of files in build :"
+echo "${BUILD_PATH}"
 
 echo "> Copy the build file"
 DEPLOY_PATH=${APP_PATH}/jar/  # jar 파일을 모아둔 곳의 path
