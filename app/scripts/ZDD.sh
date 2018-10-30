@@ -54,6 +54,8 @@ else  # 만약 작동중이라면 그것을 kill
     sleep 5
 fi
 
+echo "> Application name to operate : ${DEPLOY_JAR_NAME}"
+
 # 새로 설정한 profile 의 환경변수로 app 가동
 echo "> Deploy the ${IDLE_PROFILE} ..."
 nohup java -jar -Dspring.profiles.active=${IDLE_PROFILE} ${IDLE_APPLICATION_PATH} &
