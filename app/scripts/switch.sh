@@ -25,5 +25,7 @@ echo "set \$service_url http://127.0.0.1:${IDLE_PORT};" | sudo tee /etc/nginx/co
 echo "> Reload 'Nginx'"
 sudo service nginx reload  # Nginx reload
 
+sleep 1
+
 NEW_PROFILE=$(curl -s http://localhost/profile)  # 변경된 현재 profile 확인
 echo "> Current proxy port in 'Nginx' : ${NEW_PROFILE}"
