@@ -38,7 +38,9 @@ echo "> Exchange 'application.jar'"
 IDLE_APPLICATION=${IDLE_PROFILE}-web-application-deployment  # profile-app명.jar 로 새 명명
 IDLE_APPLICATION_PATH=${DEPLOY_PATH}${IDLE_APPLICATION}  # 새 명명된 파일의 절대경로
 
-ln -Tfs ${DEPLOY_PATH}${JAR_NAME} ${IDLE_APPLICATION_PATH}  # 새로 명명된 파일의 jar 심볼릭 링크
+DEPLOY_JAR_NAME=$(ls ${DEPLOY_PATH}/ |grep 'web-application-deployment' | tail -n 1)  # app 을 실행시킬 최신 app(jar 파일) 이름을 변수화
+
+ln -Tfs ${DEPLOY_PATH}${DEPLOY_JAR_NAME} ${IDLE_APPLICATION_PATH}  # 새로 명명된 파일의 jar 심볼릭 링크
 
 echo "> Check the 'pid' of operating application in ${IDLE_PROFILE}"
 IDLE_PID=$(pgrep -f ${IDLE_APPLICATION})  # 배정받은 profile 로 현재 작동중인 app 의 pid 확인
