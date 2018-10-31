@@ -3,7 +3,7 @@
 ##  33기 정병길
 
 ![diagram](https://github.com/ByeongGil-Jung/Web-Application-Deployment/blob/master/github/diagram.png)  
-(원본 출처 : https://jojoldu.tistory.com/267?category=635883)
+(이미지 원본 출처 : https://jojoldu.tistory.com/267?category=635883)
 
 ## 1. CI & CD & ZDD
 - CI : Continuous Integration (지속적 통합)
@@ -90,7 +90,7 @@ _(따로 설정을 안 할 경우, 서버 구동 시 항상 start 해줘야 한�
 ## 6. 실행 및 배포 방법
 1. CD.sh 을 실행하여 build 파일을 먼저 만든다.  
 2. ZDD.sh 를 두 번 실행한다.  
-_(처음 실행 때는 profile=set1 이 설정되어 배포되고, 두번 째 실행 때는 profile=set2 이 설정되어 배포된다.)_  
+_(처음 실행 때는 profile=set1 이 설정되어 배포되고, 두번째 실행 때는 profile=set2 이 설정되어 배포된다.)_  
 3. `> ps -ef | grep web-application` 의 명령어를 통해 set1, set2 가 모두 실행 중인지 확인한다.  
 4. 배포 자동화 시작.
 
