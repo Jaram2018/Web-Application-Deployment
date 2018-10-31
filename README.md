@@ -1,5 +1,9 @@
-# Jaram 2018 Seminar | Web-Application-Deployment
+# [ Jaram 2018 Seminar ]
+# > DevOps 를 지향하는 배포 (CI & CD & ZDD)
 ##  33기 정병길
+
+![diagram](https://github.com/ByeongGil-Jung/Web-Application-Deployment/blob/master/github/diagram.png)  
+(이미지 원본 출처 : https://jojoldu.tistory.com/267?category=635883)
 
 ## 1. CI & CD & ZDD
 - CI : Continuous Integration (지속적 통합)
@@ -32,6 +36,7 @@ _(절대! git directory 내에서 실행시키면 안됨. -> 복사시키거나 
   
 
 ## 3. 패키지 세팅
+(예제는 AWS EC2 Linux 2 환경)
 - java 1.8.0
 - git
 - \+ jenkins
@@ -49,6 +54,7 @@ _(절대! git directory 내에서 실행시키면 안됨. -> 복사시키거나 
 3. 이후 jenkins 환경 설정 **(참조 : https://jojoldu.tistory.com/315?category=777282)**
 4. '구성' 의 'Build' 에 run.sh 의 절대경로를 넣는다.  
 _(저는 `sudo ~/scripts/run.sh` 를 넣었습니다.)_  
+  
 +) Slack Noti 연동 **(참조 : http://dogbirdfoot.tistory.com/16)**
 
 ### [ Jenkins 실행 ]
@@ -84,7 +90,7 @@ _(따로 설정을 안 할 경우, 서버 구동 시 항상 start 해줘야 한�
 ## 6. 실행 및 배포 방법
 1. CD.sh 을 실행하여 build 파일을 먼저 만든다.  
 2. ZDD.sh 를 두 번 실행한다.  
-_(처음 실행 때는 profile=set1 이 설정되어 배포되고, 두번 째 실행 때는 profile=set2 이 설정되어 배포된다.)_  
+_(처음 실행 때는 profile=set1 이 설정되어 배포되고, 두번째 실행 때는 profile=set2 이 설정되어 배포된다.)_  
 3. `> ps -ef | grep web-application` 의 명령어를 통해 set1, set2 가 모두 실행 중인지 확인한다.  
 4. 배포 자동화 시작.
 
