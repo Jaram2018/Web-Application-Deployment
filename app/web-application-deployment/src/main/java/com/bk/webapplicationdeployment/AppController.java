@@ -24,7 +24,7 @@ public class AppController {
 
     @GetMapping("/")
     public String version(Model model) {
-        model.addAttribute("version", "0.2.4");
+        model.addAttribute("version", "0.2.5");
         return "index";
     }
 
